@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './Earth.svg';
+import logo from './earth.ico';
 import './App.css';
 
 import FrontPage from './containers/FrontPage/FontPage';
