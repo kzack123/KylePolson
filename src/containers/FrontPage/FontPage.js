@@ -240,7 +240,7 @@ class FrontPage extends Component {
       let retroBtn = null;
 
       if (this.state.screen === "home") {
-        retroBtn = <h4 onClick={() => this.toggleMenu('game')} className={!this.state.home ? [classes.getRetroBtn, classes.removeRetroBtn].join(' ') : classes.getRetroBtn}>Space invasion</h4>;
+        retroBtn = <h4 onClick={() => this.toggleMenu('game')} className={!this.state.home ? [classes.getRetroBtn, classes.removeRetroBtn].join(' ') : classes.getRetroBtn}>Space Invasion</h4>;
       }
 
         if (this.state.showNav) {
