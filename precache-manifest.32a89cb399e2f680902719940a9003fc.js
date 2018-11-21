@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/enemy3.e5c640b3.png"
   },
   {
-    "revision": "b1fb3d68e542064b729b",
+    "revision": "3ef9c0b4fccbe31bc68f",
     "url": "/KylePolson/static/css/main.0bed5ead.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/arrows.bfcc7f07.png"
   },
   {
-    "revision": "b1fb3d68e542064b729b",
-    "url": "/KylePolson/static/js/main.b1fb3d68.chunk.js"
+    "revision": "3ef9c0b4fccbe31bc68f",
+    "url": "/KylePolson/static/js/main.3ef9c0b4.chunk.js"
   },
   {
     "revision": "5161d8e497b8ab0715eae5302c0d22f1",
@@ -88,7 +88,7 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/earth.702320b1.ico"
   },
   {
-    "revision": "b3a0e085e3b23c9c9882a82d008bed15",
+    "revision": "9575ca956556a4bf979551f8dbb9dd0f",
     "url": "/KylePolson/index.html"
   }
 ];
