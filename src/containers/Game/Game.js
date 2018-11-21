@@ -883,11 +883,11 @@ class Game extends Component {
 
     render() {
         let menuText = 'Press ESC for menu';
-        let instructions = <p id="instructions" className={classes.Instructions}>Move mouse to fly click to fire. Get ready!</p>
+        let instructions = <p id="instructions" className={classes.Instructions}>Move mouse to fly and click to fire. Get ready!</p>
         
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             menuText = 'Menu';
-            instructions = <p id="instructions" className={classes.Instructions}>drag finger to fly and shoot. Get ready!</p>;
+            instructions = <p id="instructions" className={classes.Instructions}>Drag finger to fly and shoot. Get ready!</p>;
         }
 
         
