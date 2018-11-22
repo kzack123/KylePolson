@@ -79,10 +79,12 @@ const unPause = new Audio(UnPause);
 unPause.volume = 0.03;
 const pause = new Audio(Pause);
 pause.volume = 0.03;
-const lost = new Audio(Lost);
-lost.volume = 0.03;
+let lost = null;
+
 const begin = new Audio(Begin);
 begin.volume = 0.03;
+
+let explosions = null;
 
 
 class Game extends Component {
@@ -103,6 +105,8 @@ class Game extends Component {
         // setting all vars to staring game posistion
         this.setState({pauseGame: false, youLost: false});
         debrisArry = [];
+        explosions = new Audio(Explosion);
+        lost = new Audio(Lost);
         smokeArry = [];
         holdNum = null;
         gameCanvas = null;
@@ -232,8 +236,11 @@ class Game extends Component {
                 //const boom = new Audio(Explosion);
                 
                 //explosions.load(Explosion);
-                const explosions = new Audio(Explosion);
+                //const explosions = new Audio(Explosion);
                 //explosions.load(Explosion);
+
+                //explosions.pause();
+                explosions.currentTime = 0;
                 explosions.volume = 0.15;
                 explosions.play();
                 
@@ -657,7 +664,7 @@ class Game extends Component {
                 firstShot = true;
             }
             if (!reloading) {
-                laser.pause();
+                //laser.pause();
                 laser.currentTime = 0;
                 laser.play();
                 reloading = true;
@@ -866,6 +873,7 @@ class Game extends Component {
                         loseHealth();
                         if (health === 0) {
                             lost.play();
+                            lost.volume = 0.03;
                             self.setState({youLost: true});
                             //pauseGame = true;
                             setTimeout(() => pauseGame = true, 200);
@@ -883,6 +891,7 @@ class Game extends Component {
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x, circleArray[destroyEnemy].y));
                         //this.startGame('end');
                         lost.play();
+                        lost.volume = 0.03;
                         pauseGame = true;
                         self.setState({youLost: true});
                         
