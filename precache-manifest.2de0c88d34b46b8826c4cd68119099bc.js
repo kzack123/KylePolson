@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "e5c640b396e015dc0bbed50841090a15",
-    "url": "/KylePolson/static/media/enemy3.e5c640b3.png"
+    "revision": "7719cc8dfa4903b2c808ab3bcdc2ebf4",
+    "url": "/KylePolson/static/media/Explosion.7719cc8d.mp3"
   },
   {
-    "revision": "fb8d35225ff094472e90",
-    "url": "/KylePolson/static/css/main.fc68aab6.chunk.css"
+    "revision": "c42b290a66fe9d0b2b0f",
+    "url": "/KylePolson/static/css/main.e0119721.chunk.css"
   },
   {
-    "revision": "6c084c9c7d5787bf277e",
-    "url": "/KylePolson/static/js/1.6c084c9c.chunk.js"
+    "revision": "466502f44502e2f4be23",
+    "url": "/KylePolson/static/js/1.466502f4.chunk.js"
   },
   {
     "revision": "c052f4ae6c05d7e67ba0",
@@ -44,12 +44,36 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/arrows.bfcc7f07.png"
   },
   {
-    "revision": "fb8d35225ff094472e90",
-    "url": "/KylePolson/static/js/main.fb8d3522.chunk.js"
+    "revision": "e5c640b396e015dc0bbed50841090a15",
+    "url": "/KylePolson/static/media/enemy3.e5c640b3.png"
   },
   {
     "revision": "5161d8e497b8ab0715eae5302c0d22f1",
     "url": "/KylePolson/static/media/laserbeam.5161d8e4.png"
+  },
+  {
+    "revision": "0d28642378c3833b8d92ae4c8659290b",
+    "url": "/KylePolson/static/media/Laser.0d286423.mp3"
+  },
+  {
+    "revision": "c42b290a66fe9d0b2b0f",
+    "url": "/KylePolson/static/js/main.c42b290a.chunk.js"
+  },
+  {
+    "revision": "a5e4c141312c2bfbebccc5050753ff84",
+    "url": "/KylePolson/static/media/UnPause.a5e4c141.mp3"
+  },
+  {
+    "revision": "3e4e5dfdbc8b4011012caea2d4e5a2be",
+    "url": "/KylePolson/static/media/Pause.3e4e5dfd.mp3"
+  },
+  {
+    "revision": "c20a9f50579baab0fd646cc656cc69cc",
+    "url": "/KylePolson/static/media/Lost.c20a9f50.mp3"
+  },
+  {
+    "revision": "dfcdacd70fa97f883865459151bf89fc",
+    "url": "/KylePolson/static/media/Begin.dfcdacd7.mp3"
   },
   {
     "revision": "eb0bfe64ddcaa0b4c3be19b19541b584",
@@ -88,7 +112,7 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/earth.702320b1.ico"
   },
   {
-    "revision": "40188b4e7436e4eb30f442b369231cf9",
+    "revision": "dbb130087da5e66d2bb220572681558e",
     "url": "/KylePolson/index.html"
   }
 ];
