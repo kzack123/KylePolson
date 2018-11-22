@@ -26,7 +26,7 @@ class FrontPage extends Component {
         showBackdrop: false,
         projectInfo: 'none',
         removeProjectInfo: false,
-        showNav: false
+        showNav: false,
       }
 
     componentDidMount() {
@@ -38,12 +38,13 @@ class FrontPage extends Component {
 
     let canvas = document.getElementById('stars');
     let c = canvas.getContext('2d');
+    let self = this;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     
 
-    const particleCount = 350;
+    let particleCount = 450;
   
     function LightParticle(x, y, radius, color) {
       this.x = x;
@@ -57,17 +58,32 @@ class FrontPage extends Component {
       };
 
       this.draw = function() {
-        c.save();
-        c.beginPath();
-        c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);	
-        c.shadowColor = this.color;
-        c.shadowBlur = 3;
-        c.shadowOffsetX = 400;
-        c.shadowOffsetY = 400;
-        c.fillStyle = this.color;
-        c.fill();
-        c.closePath();
-        c.restore();
+        if (self.state.game) {
+          c.save();
+          c.beginPath();
+          c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+          //c.shadowColor = this.color;
+          //c.shadowBlur = 3;
+          //c.shadowOffsetX = 400;
+          //c.shadowOffsetY = 400;
+          c.fillStyle = this.color;
+          c.fill();
+          c.closePath();
+          c.restore();
+        } else {
+          c.save();
+          c.beginPath();
+          c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+          c.shadowColor = this.color;
+          c.shadowBlur = 3;
+          c.shadowOffsetX = 400;
+          c.shadowOffsetY = 400;
+          c.fillStyle = this.color;
+          c.fill();
+          c.closePath();
+          c.restore();
+        }
+        
       };
 
     }

@@ -11,6 +11,13 @@ import laserbeam from '../../imgs/game/laserbeam.png';
 import main from '../../imgs/game/main.png';
 import heart from '../../imgs/game/heart.png';
 
+import Laser from './Laser.mp3';
+import Explosion from './Explosion.mp3';
+import UnPause from './UnPause.mp3';
+import Pause from './Pause.mp3';
+import Lost from './Lost.mp3';
+import Begin from './Begin.mp3';
+
 
 //////////////////// Canvas and its height width and Context ////////////////////
 
@@ -63,6 +70,21 @@ let reloading = null;
 //redeploy timer for when resuming the game after pausing it
 let timer = null;
 
+//Audio sounds and volume levels
+
+const laser = new Audio(Laser);
+laser.volume = 0.08;
+
+const unPause = new Audio(UnPause);
+unPause.volume = 0.03;
+const pause = new Audio(Pause);
+pause.volume = 0.03;
+const lost = new Audio(Lost);
+lost.volume = 0.03;
+const begin = new Audio(Begin);
+begin.volume = 0.03;
+
+
 class Game extends Component {
     
     state = {
@@ -97,6 +119,7 @@ class Game extends Component {
         firstShot = false;
         reloading = false;
         timer = null;
+        begin.play();
         const scoreElm = document.getElementById('score');
         scoreElm.innerHTML = "Score: 0"
         for (let i=1;i<4;i++) {
@@ -119,11 +142,18 @@ class Game extends Component {
 
     changePauseHandler = (e) => {
         if (!this.state.youLost) {
+            
 
             if (e.keyCode === 27 || e.target.id === 'mobilePause') {
                 if (this.state.pauseGame) {
+                    unPause.pause();
+                    unPause.currentTime = 0;
+                    unPause.play();
                     this.setState({pauseGame: false});
                 } else {
+                    pause.pause();
+                    pause.currentTime = 0;
+                    pause.play();
                     this.setState({pauseGame: true});
                 }
             } else {
@@ -151,10 +181,13 @@ class Game extends Component {
 
     // for calling the shoot method to fire laser true = fire = dont
     fireIt = () => {
+        //sound.play();
+        //sound.pause();
+        //sound.currentTime = 0;
         makeItRain = true;
         window.setTimeout(function () {
             makeItRain = false;
-        }, 250); // 390
+        }, 390); // 390
     }
 
 
@@ -195,6 +228,17 @@ class Game extends Component {
             this.width = width;
             this.height = height;
             this.enemy = enemy;
+            this.explosion = function() {
+                //const boom = new Audio(Explosion);
+                
+                //explosions.load(Explosion);
+                const explosions = new Audio(Explosion);
+                //explosions.load(Explosion);
+                explosions.volume = 0.15;
+                explosions.play();
+                
+                
+            }
             
             this.exploded = false;
             this.opacity = 1;
@@ -214,7 +258,8 @@ class Game extends Component {
                 cc.beginPath();    
                 cc.drawImage(this.enemy, this.x, this.y, this.width, this.height);
                 cc.strokeStyle = 'blue';   
-                cc.stroke();  
+                cc.stroke();
+                cc.closePath();  
                 cc.restore();
             }
     
@@ -222,48 +267,53 @@ class Game extends Component {
                 cc.save();
                 cc.beginPath();
                 cc.fillStyle = `rgba(84, 84, 84, ${this.opacity})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = `rgba(84, 84, 84, ${this.opacity})`;
+                //cc.shadowBlur = 20;
+                //cc.shadowColor = `rgba(84, 84, 84, ${this.opacity})`;
                 cc.strokeStyle= `rgba(84, 84, 84, ${this.opacity})`;
                 cc.arc(this.x - 4, this.y + 5, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                cc.stroke();
+                //cc.stroke();
+                cc.closePath();
                 
-                //c.beginPath();
+                cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
+                //cc.shadowBlur = 20;
+                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x + 4, this.y, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                cc.stroke();
+                //cc.stroke();
+                cc.closePath();
 
-                //c.beginPath();
+                cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
+                //cc.shadowBlur = 20;
+                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x, this.y - 4, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                cc.stroke();
+                //cc.stroke();
+                cc.closePath();
 
-                //c.beginPath();
+                cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
+                //cc.shadowBlur = 20;
+                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x - 2, this.y + 4, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                cc.stroke();
+                //cc.stroke();
+                cc.closePath();
 
                 //c.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
+                //cc.shadowBlur = 20;
+                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x + 3, this.y + 4, this.radius, 0, 2 * Math.PI);
                 cc.fill();
                 cc.stroke();
+                cc.closePath();
 
                 //c.beginPath();
                 /*
@@ -333,8 +383,8 @@ class Game extends Component {
                 cc.save();
                 cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = "rgb(255, 133, 51)";
+                //cc.shadowBlur = 20;
+                //cc.shadowColor = "rgb(255, 133, 51)";
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x - 35, this.y + 5, this.radius, 0, 2 * Math.PI);
                 cc.fill();
@@ -394,8 +444,8 @@ class Game extends Component {
                 cc.save();
                 cc.beginPath();
                 cc.fillStyle = `rgba(84, 84, 84, ${this.opacity})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = "rgba(84, 84, 84, 1)";
+                //cc.shadowBlur = 20;
+                //cc.shadowColor = "rgba(84, 84, 84, 1)";
                 cc.strokeStyle= `rgba(84, 84, 84, ${this.opacity})`;
                 cc.arc(this.x - 35, this.y + 5, this.radius, 0, 2 * Math.PI);
                 cc.fill();
@@ -490,6 +540,7 @@ class Game extends Component {
                 cc.strokeStyle = 'blue';
                 cc.stroke();
                 cc.fill();
+                cc.closePath();
                 cc.restore();
             },
             die: function() {
@@ -503,7 +554,8 @@ class Game extends Component {
                 cc.translate(this.x,this.y);
                 cc.strokeStyle = 'blue';
                 cc.stroke();
-                cc.fill();    
+                cc.fill();  
+                cc.closePath();  
                 cc.restore();
             },
             update: function() {
@@ -544,7 +596,7 @@ class Game extends Component {
                 cc.globalAlpha=1.0;
                 cc.strokeStyle = 'blue';
                 cc.stroke();
-
+                cc.closePath();
                 cc.restore();
             },
             update: function() {
@@ -583,7 +635,8 @@ class Game extends Component {
                 cc.strokeRect(this.x, this.y, this.radius, this.radius); //draw box radius
                 cc.strokeStyle = 'yellow';           
                 cc.stroke();
-                cc.fill();          
+                cc.fill();
+                cc.closePath();       
                 cc.restore();
                 
                 
@@ -604,6 +657,9 @@ class Game extends Component {
                 firstShot = true;
             }
             if (!reloading) {
+                laser.pause();
+                laser.currentTime = 0;
+                laser.play();
                 reloading = true;
                 //laserFired.push(new Laser(mouse.x - 4, window.innerHeight - 120, 35, 5, 40, laserbeams));
                 laserFired.push(new Laser(mouse.x - 40, window.innerHeight - 80, 35, 5, 40, laserbeams));
@@ -612,7 +668,7 @@ class Game extends Component {
                 reload();
                 setTimeout(function() {
                     reloading = false;
-                },250) // 390
+                },390) // 390
             } else {
                 return;
             }   
@@ -712,6 +768,9 @@ class Game extends Component {
                     } else {
                         if (evt.target.id === 'resume') {
                             self.setState({pauseGame: false});
+                            unPause.pause();
+                            unPause.currentTime = 0;
+                            unPause.play();
                             speed = holdNum;
                     pauseGame = false;
                         animates();
@@ -726,6 +785,9 @@ class Game extends Component {
                 
                 } else if (evt.target.id === 'resume') {
                     self.setState({pauseGame: false});
+                    unPause.pause();
+                    unPause.currentTime = 0;
+                    unPause.play();
                     pauseGame = false;
                         animates();
                         clearTimeout(timer);
@@ -798,11 +860,12 @@ class Game extends Component {
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x, circleArray[destroyEnemy].y));
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x, circleArray[destroyEnemy].y));
                         //console.log('ship hit');
+                        circleArray[destroyEnemy].explosion();
                         
                         // lose health to main ship when hit by enemy ship
                         loseHealth();
                         if (health === 0) {
-                            
+                            lost.play();
                             self.setState({youLost: true});
                             //pauseGame = true;
                             setTimeout(() => pauseGame = true, 200);
@@ -811,6 +874,7 @@ class Game extends Component {
                     
                     //determine if enemy ship hit the ground
                     if (circleArray[i].y > window.innerHeight) {
+                        circleArray[destroyEnemy].explosion();
                         circleArray[destroyEnemy].exploded = true;
                         circleArray[destroyEnemy].x = circleArray[destroyEnemy].x + 50;
                         debrisArry.push(new Debris(circleArray[destroyEnemy].x, circleArray[destroyEnemy].y));
@@ -818,7 +882,7 @@ class Game extends Component {
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x, circleArray[destroyEnemy].y));
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x, circleArray[destroyEnemy].y));
                         //this.startGame('end');
-                        
+                        lost.play();
                         pauseGame = true;
                         self.setState({youLost: true});
                         
@@ -842,6 +906,8 @@ class Game extends Component {
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x + 30, circleArray[destroyEnemy].y));
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x + 30, circleArray[destroyEnemy].y));
                             debrisArry.push(new Debris(circleArray[destroyEnemy].x + 30, circleArray[destroyEnemy].y));
+                            circleArray[destroyEnemy].explosion();
+                            
                         }
                     }
                     }
