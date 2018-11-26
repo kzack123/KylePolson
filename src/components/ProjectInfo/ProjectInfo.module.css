@@ -58,6 +58,18 @@
     margin-bottom: 70px;
 }
 
+.MeP p {
+    color: white;
+    width: 70%;
+    margin-left: 15%;
+    font-size: 1.3vw;
+    margin-bottom: 10px;
+}
+
+.MeP {
+    margin-bottom: 60px;
+}
+
 .Quote {
     font-weight: 100;
     color: gray;

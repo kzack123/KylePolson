@@ -123,7 +123,7 @@ const projectInfo = (props) => {
             break;
             case 'aboutMe':
             project = (
-                <div>
+                <div className={classes.MeP}>
                     <div className={classes.Me}>
                         <img src={me} alt="Pic of Me the creator of this site :)" />
                     </div>
@@ -131,8 +131,8 @@ const projectInfo = (props) => {
                     <p>I'm Kyle I've been coding for a few years now. I've been a tech aficionado ever since my dad came home with our very own Windows 95 computer. 
                          But my love for technology really exploded once I picked up writing code, I found a brand new passion, a whole new world that I just can't get enough of.
                         I haven't been able to put it down since. I strive to learn everything I can about new techniques and languages, and I hope to 
-                        do this for the rest of my life. <p><span className={classes.Quote}><i>"Changing the world one line of code at a time."</i></span></p>
-                    </p>
+                        do this for the rest of my life.  </p>
+                        <span className={classes.Quote}><i>"Changing the world one line of code at a time."</i></span>
                 </div>
             );
             break;

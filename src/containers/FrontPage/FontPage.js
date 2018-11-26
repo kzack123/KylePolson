@@ -40,7 +40,7 @@ class FrontPage extends Component {
     let c = canvas.getContext('2d');
     let self = this;
 
-    canvas.width = window.innerWidth;
+    canvas.width = window.innerWidth + 250;
     canvas.height = window.innerHeight;
     
 
@@ -76,8 +76,8 @@ class FrontPage extends Component {
           c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
           c.shadowColor = this.color;
           c.shadowBlur = 3;
-          c.shadowOffsetX = 400;
-          c.shadowOffsetY = 400;
+          c.shadowOffsetX = 300;
+          c.shadowOffsetY = 300;
           c.fillStyle = this.color;
           c.fill();
           c.closePath();
@@ -108,6 +108,8 @@ class FrontPage extends Component {
     ];
     
     const initializeParticles = () => {
+      canvas.width = window.innerWidth + 250;
+      canvas.height = window.innerHeight;
       for (let i = 0; i < particleCount; i++) {
         let randomColorIndex = Math.floor(Math.random() * 6);
         let randomRadius = Math.random() * 2;
@@ -152,7 +154,7 @@ class FrontPage extends Component {
     }
     animate();
     document.getElementById("stars").addEventListener('touchstart', function(e){
-      e.preventDefault()
+      //e.preventDefault()
     })
     }
 

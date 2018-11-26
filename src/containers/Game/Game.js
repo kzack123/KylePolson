@@ -11,12 +11,12 @@ import laserbeam from '../../imgs/game/laserbeam.png';
 import main from '../../imgs/game/main.png';
 import heart from '../../imgs/game/heart.png';
 
-import Laser from './Laser.mp3';
-import Explosion from './Explosion.mp3';
-import UnPause from './UnPause.mp3';
-import Pause from './Pause.mp3';
-import Lost from './Lost.mp3';
-import Begin from './Begin.mp3';
+import Laser from './Sounds/Laser.mp3';
+import Explosion from './Sounds/Explosion.mp3';
+import UnPause from './Sounds/UnPause.mp3';
+import Pause from './Sounds/Pause.mp3';
+import Lost from './Sounds/Lost.mp3';
+import Begin from './Sounds/Begin.mp3';
 
 
 //////////////////// Canvas and its height width and Context ////////////////////
@@ -507,6 +507,20 @@ class Game extends Component {
                     }
                     setTimeout(function() {
                         circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
+                        /*if (speed < 800) {
+                            radius = 60;//Math.random() * 60 + 40;
+                            x = Math.random() * (window.innerWidth - radius * 2) + radius;
+                            y = -50;
+                            dx = (Math.random() - 0.5 + 2);
+                            dy = Math.random() * 4 + 2;
+                            randomEnemy = Math.floor(Math.random() * Math.floor(5));
+                            changeDirection = Math.random();
+
+                            //circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
+                            //circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
+                            //circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
+                            circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
+                        } */
                         addBall(number);
                         if (speed > 400) {
                             speed = speed - 9;
@@ -740,7 +754,6 @@ class Game extends Component {
 
 
         document.onkeydown = function(evt) {
-            console.log(speed);
             if(!self.state.youLost) {
                 if (evt.keyCode === 27) {
                 
@@ -764,7 +777,6 @@ class Game extends Component {
         };
 
         document.onclick = function(evt) {
-            console.log(speed);
             //console.log(evt.path[0].id);     
             if(!self.state.youLost) {
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
