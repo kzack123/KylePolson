@@ -289,7 +289,7 @@ class Game extends Component {
                 cc.fill();
                 cc.closePath();
 
-                c.beginPath();
+                cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x + 3, this.y + 4, this.radius, 0, 2 * Math.PI);
