@@ -185,13 +185,10 @@ class Game extends Component {
 
     // for calling the shoot method to fire laser true = fire = dont
     fireIt = () => {
-        //sound.play();
-        //sound.pause();
-        //sound.currentTime = 0;
         makeItRain = true;
         window.setTimeout(function () {
             makeItRain = false;
-        }, 390); // 390
+        }, 390);
     }
 
 
@@ -233,18 +230,9 @@ class Game extends Component {
             this.height = height;
             this.enemy = enemy;
             this.explosion = function() {
-                //const boom = new Audio(Explosion);
-                
-                //explosions.load(Explosion);
-                //const explosions = new Audio(Explosion);
-                //explosions.load(Explosion);
-
-                //explosions.pause();
                 explosions.currentTime = 0;
                 explosions.volume = 0.15;
                 explosions.play();
-                
-                
             }
             
             this.exploded = false;
@@ -274,66 +262,40 @@ class Game extends Component {
                 cc.save();
                 cc.beginPath();
                 cc.fillStyle = `rgba(84, 84, 84, ${this.opacity})`;
-                //cc.shadowBlur = 20;
-                //cc.shadowColor = `rgba(84, 84, 84, ${this.opacity})`;
                 cc.strokeStyle= `rgba(84, 84, 84, ${this.opacity})`;
                 cc.arc(this.x - 4, this.y + 5, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                //cc.stroke();
                 cc.closePath();
                 
                 cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                //cc.shadowBlur = 20;
-                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x + 4, this.y, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                //cc.stroke();
+
                 cc.closePath();
 
                 cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                //cc.shadowBlur = 20;
-                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x, this.y - 4, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                //cc.stroke();
                 cc.closePath();
 
                 cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                //cc.shadowBlur = 20;
-                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x - 2, this.y + 4, this.radius, 0, 2 * Math.PI);
                 cc.fill();
-                //cc.stroke();
                 cc.closePath();
 
-                //c.beginPath();
+                c.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                //cc.shadowBlur = 20;
-                //cc.shadowColor = `rgba(255, 133, 51, ${this.opacity})`;
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x + 3, this.y + 4, this.radius, 0, 2 * Math.PI);
                 cc.fill();
                 cc.stroke();
                 cc.closePath();
-
-                //c.beginPath();
-                /*
-                cc.fillStyle = `rgba(84, 84, 84, ${this.opacity - .01})`;
-                cc.shadowBlur = 20;
-                cc.shadowColor = `rgba(84, 84, 84, ${this.opacity - .01})`;
-                cc.strokeStyle= `rgba(84, 84, 84, ${this.opacity - .01})`;
-                cc.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-                cc.fill();
-                cc.stroke();
-                */
-                
-                
 
                 cc.restore();
                 cc.closePath();
@@ -350,7 +312,6 @@ class Game extends Component {
                     } else {
                         this.opacity -=0.025;
                         this.radius +=0.83;
-                        //this.draw();
                         this.DrawExplosion();
                     }
                 } else {
@@ -390,8 +351,6 @@ class Game extends Component {
                 cc.save();
                 cc.beginPath();
                 cc.fillStyle = `rgba(255, 102, 0, ${this.opacity})`;
-                //cc.shadowBlur = 20;
-                //cc.shadowColor = "rgb(255, 133, 51)";
                 cc.strokeStyle= `rgba(255, 133, 51, ${this.opacity})`;
                 cc.arc(this.x - 35, this.y + 5, this.radius, 0, 2 * Math.PI);
                 cc.fill();
@@ -420,12 +379,8 @@ class Game extends Component {
                     
                     if (this.count === this.howOften) {
                         smokeArry.push(new Smoke(this.x, this.y));
-                        //this.howOften += 1;
                         this.count = 0
                     }
-                    //this.opacity -=0.01;
-                    //smokeArry.push(new Smoke(this.x, this.y, 5, .2, 7, 180));
-                    
                     this.radius -=.08;
                     this.count += 1;
                     this.draw();
@@ -451,8 +406,6 @@ class Game extends Component {
                 cc.save();
                 cc.beginPath();
                 cc.fillStyle = `rgba(84, 84, 84, ${this.opacity})`;
-                //cc.shadowBlur = 20;
-                //cc.shadowColor = "rgba(84, 84, 84, 1)";
                 cc.strokeStyle= `rgba(84, 84, 84, ${this.opacity})`;
                 cc.arc(this.x - 35, this.y + 5, this.radius, 0, 2 * Math.PI);
                 cc.fill();
@@ -462,9 +415,6 @@ class Game extends Component {
             }
             
             this.update = function() {
-
-                //this.x += .05;
-                //this.y += .05;
                 if (this.opacity < 0.1) {
                     return;
                 } else {
@@ -507,20 +457,6 @@ class Game extends Component {
                     }
                     setTimeout(function() {
                         circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
-                        /*if (speed < 800) {
-                            radius = 60;//Math.random() * 60 + 40;
-                            x = Math.random() * (window.innerWidth - radius * 2) + radius;
-                            y = -50;
-                            dx = (Math.random() - 0.5 + 2);
-                            dy = Math.random() * 4 + 2;
-                            randomEnemy = Math.floor(Math.random() * Math.floor(5));
-                            changeDirection = Math.random();
-
-                            //circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
-                            //circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
-                            //circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
-                            circleArray.push(new Circle(x, y, dx, dy, radius, radius, enemys[randomEnemy]));
-                        } */
                         addBall(number);
                         if (speed > 400) {
                             speed = speed - 9;
@@ -585,9 +521,7 @@ class Game extends Component {
                 if (health === 0) {
                     this.y = this.y + 8;
                     this.rot +=7;
-                    //this.y +=5;
                     this.die();
-                    //this.draw();
                 } else if (this.y > window.innerHeight - 120) {
                     this.y = this.y - 5;
                     this.draw();
@@ -682,10 +616,8 @@ class Game extends Component {
                 laser.currentTime = 0;
                 laser.play();
                 reloading = true;
-                //laserFired.push(new Laser(mouse.x - 4, window.innerHeight - 120, 35, 5, 40, laserbeams));
                 laserFired.push(new Laser(mouse.x - 40, window.innerHeight - 80, 35, 5, 40, laserbeams));
                 laserFired.push(new Laser(mouse.x + 32, window.innerHeight - 80, 35, 5, 40, laserbeams));
-                //OG laserFired.push(new Laser(mouse.x - 4, window.innerHeight - 120, 35, 5, 40, laserbeams));
                 reload();
                 setTimeout(function() {
                     reloading = false;
@@ -777,13 +709,11 @@ class Game extends Component {
         };
 
         document.onclick = function(evt) {
-            //console.log(evt.path[0].id);     
             if(!self.state.youLost) {
                 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                     if (!pauseGame && evt.target.id !== 'retry') {           
                         pauseGame = true;
                         holdNum = speed;
-                        //alert(evt.path[0].className)
                     } else {
                         if (evt.target.id === 'resume') {
                             self.setState({pauseGame: false});
