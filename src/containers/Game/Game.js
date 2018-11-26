@@ -491,7 +491,7 @@ class Game extends Component {
                 if (count > 0) {
                     let radius = 60;//Math.random() * 60 + 40;
                     let x = Math.random() * (window.innerWidth - radius * 2) + radius;
-                    let y = -50;
+                    let y = -40;
                     let dx = (Math.random() - 0.5 + 2);
                     let dy = Math.random() * 4 + 2;
                     let randomEnemy = Math.floor(Math.random() * Math.floor(5));
@@ -537,7 +537,7 @@ class Game extends Component {
                 return;
             }
         }
-        setTimeout(() => addBall(number), 500);  //3500
+        setTimeout(() => addBall(number), 3500);  //3500
 
 
         //////////////////// Ship ////////////////////

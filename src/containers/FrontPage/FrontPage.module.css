@@ -16,6 +16,14 @@
     overflow: hidden;
   }
 
+  .Starss {
+    
+    touch-action: none;
+    -ms-touch-action: none;
+    -ms-touch-select: none;
+    overflow: hidden;
+  }
+
   .Arrows {
     position: absolute;
     color: gray;
