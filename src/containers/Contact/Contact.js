@@ -51,8 +51,8 @@ class Contact extends Component {
                 window.open("https://www.linkedin.com/in/kyle-polson-a90461168/");
                 break;
             case "resume":
-                window.open("https://zety.com/mycv/Kyle.Polson", '_blank');
-                window.open("https://zety.com/mycv/Kyle.Polson");
+                window.open("https://zety.com/mycv/KylePolson-Resume", '_blank');
+                window.open("https://zety.com/mycv/KylePolson-Resume");
                 break;
             default: return;
           }
