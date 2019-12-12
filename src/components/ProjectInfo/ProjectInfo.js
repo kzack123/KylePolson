@@ -6,7 +6,7 @@ import burger from '../../imgs/burger.png';
 import blocks from '../../imgs/blocks.png';
 import jammming from '../../imgs/Optimized-jammming.png';
 import login from '../../imgs/login.png';
-import quiz from '../../imgs/quiz.png';
+import nyt from '../../imgs/nyt.png';
 import ravanes from '../../imgs/Optimized-ravanes.png';
 import me from '../../imgs/us.jpg';
 
@@ -20,9 +20,9 @@ const projectInfo = (props) => {
                 window.open("https://kzack123.github.io/React-Login/", '_blank');
                 window.open("https://kzack123.github.io/React-Login/");
                 break;
-            case "quiz":
-                window.open("https://codepen.io/kzack/full/wpdQov", '_blank');
-                window.open("https://codepen.io/kzack/full/wpdQov");
+            case "nyt":
+                window.open("https://kzack123.github.io/NewYorkTimes/", '_blank');
+                window.open("https://kzack123.github.io/NewYorkTimes/");
                 break;
             case "ravanes":
                 window.open("http://ko-ravenous.surge.sh", '_blank');
@@ -96,14 +96,17 @@ const projectInfo = (props) => {
                 </div>
             );
             break;
-        case 'quiz':
+        case 'nyt':
             project = (
                 <div>
                     <div className={classes.picHolder}>
-                        <img src={quiz} alt="See how well you know me quiz website" onClick={openPage} />
+                        <img src={nyt} alt="New York Times clone" onClick={openPage} />
                     </div>
-                    <h1>Quiz</h1>
-                    <p>This is <em>The Kyle Quiz Game</em>, you can learn more things about me in a fun way! Made using HTML, CSS, Javascript and jQuery.</p>
+                    <h1>New York Times</h1>
+                    <p>Here i wanted to create a clone of the front page of the New York Times to show off some of my 
+                        templet skills and i wanted to try something new so i chose to use vanila Javascript with 
+                        Webpack and try my hand at Sass as well.
+                    </p>
                 </div>
             );
             break;
