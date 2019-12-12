@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/Explosion.7719cc8d.mp3"
   },
   {
-    "revision": "d3b6e6eb4d4b3b6a0337",
-    "url": "/KylePolson/static/css/main.21e04f0a.chunk.css"
+    "revision": "f33984580716a325d47b",
+    "url": "/KylePolson/static/css/main.03d40b89.chunk.css"
   },
   {
     "revision": "466502f44502e2f4be23",
@@ -20,6 +20,10 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/burger.fd262685.png"
   },
   {
+    "revision": "1597d4915b7f0449a3720152989183f1",
+    "url": "/KylePolson/static/media/nyt.1597d491.png"
+  },
+  {
     "revision": "c5f35b4117b0c4d8cf574231bfe1c29e",
     "url": "/KylePolson/static/media/blocks.c5f35b41.png"
   },
@@ -30,10 +34,6 @@ self.__precacheManifest = [
   {
     "revision": "ded8b18cfb7b85db9ed8fe5553c4fd31",
     "url": "/KylePolson/static/media/login.ded8b18c.png"
-  },
-  {
-    "revision": "4dc1328390f15e6599644d1130ed8f1c",
-    "url": "/KylePolson/static/media/quiz.4dc13283.png"
   },
   {
     "revision": "b9bb1b8ec155764a2564a2ea83f9d1f3",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/Laser.0d286423.mp3"
   },
   {
-    "revision": "d3b6e6eb4d4b3b6a0337",
-    "url": "/KylePolson/static/js/main.d3b6e6eb.chunk.js"
+    "revision": "f33984580716a325d47b",
+    "url": "/KylePolson/static/js/main.f3398458.chunk.js"
   },
   {
     "revision": "a5e4c141312c2bfbebccc5050753ff84",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/KylePolson/static/media/earth.702320b1.ico"
   },
   {
-    "revision": "daac2e1a14ee1aeb5317cade44d20eba",
+    "revision": "35a9224dfbfd38831b47a75d0a9b2c37",
     "url": "/KylePolson/index.html"
   }
 ];
