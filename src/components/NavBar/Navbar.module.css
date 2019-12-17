@@ -77,7 +77,11 @@
     transition: width .3s;
 }
 
-
+@media screen and (max-width: 740px) {
+    .Navbar {
+        top: 5px;
+    }
+}
 
 @media (max-width: 500px) {
     .NavItem {
