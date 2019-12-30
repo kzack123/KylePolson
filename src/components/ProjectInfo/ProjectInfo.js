@@ -79,8 +79,11 @@ const projectInfo = (props) => {
                         <img src={jammming} alt="Jammming web app" onClick={openPage} />
                     </div>
                     <h1>Jammming</h1>
-                    <p>This is my Jammming Web-App! Find and add any song from Spotify's extensive library, to your very own playlist on Spotify.
-                       Developed using HTML, CSS and React, also used Spotify's API to get access to their music and your account.</p>
+                    <p>
+                        This is my Jammming Web-App! Find and add any song from Spotify's extensive library, to your very 
+                        own playlist on Spotify. Developed using HTML, CSS and React, also used Spotify's API to get access 
+                        to their music and your account.
+                    </p>
                 </div>
             );
             break;
@@ -91,8 +94,10 @@ const projectInfo = (props) => {
                         <img src={login} alt="Mock login website" onClick={openPage} />
                     </div>
                     <h1>Login</h1>
-                    <p>This is my Login Web-App. Create an account, then sign in to see your newly created account with all your details and data saved. 
-                       Created using HTML, CSS and React.</p>
+                    <p>
+                        This is my Login Web-App. Create an account, then sign in to see your newly 
+                        created account with all your details and data saved. Created using HTML, CSS and React.
+                    </p>
                 </div>
             );
             break;
@@ -103,9 +108,10 @@ const projectInfo = (props) => {
                         <img src={nyt} alt="New York Times clone" onClick={openPage} />
                     </div>
                     <h1>New York Times</h1>
-                    <p>Here i wanted to create a clone of the front page of the New York Times to show off some of my 
-                        templet skills and i wanted to try something new so i chose to use vanila Javascript with 
-                        Webpack and try my hand at Sass as well.
+                    <p>
+                        Need the News section? Here I've created a clone of the front page of the 
+                        New York Times to show off some of my templet skills and why not push it a 
+                        bit further and use some vanila Javascript, with Webpack and lastly, a dash of Sass.
                     </p>
                 </div>
             );
@@ -117,10 +123,12 @@ const projectInfo = (props) => {
                         <img src={ravanes} alt="Ravanas restaurant finder" onClick={openPage} />
                     </div>
                     <h1>Ravanes</h1>
-                    <p>Last but definitely not least, the Ravanes Web-App. Find restaurants anywhere 
-                       in the world! easy task when all you have to do is type whatever food you're craving and hit <em>Search</em>. 
-                       Developed with HTML, CSS and React, reaching out to Yelps API, you can view millions of restaurants wherever you 
-                       are, in the planet.</p>
+                    <p>
+                        Last but definitely not least, the Ravanes Web-App. Find restaurants anywhere 
+                        in the world! easy task when all you have to do is type whatever food you're craving and hit <em>Search</em>. 
+                        Developed with HTML, CSS and React, reaching out to Yelps API, you can view millions of restaurants wherever you 
+                        are in the planet!
+                    </p>
                 </div>
             );
             break;
